@@ -1,4 +1,21 @@
-<input type="button" id="1" class="sound-button" value="Double Team" data="doubleTeam"/>
+<?php
+$files = scandir("clips");
+
+for($i=2; $i<count($files);$i++){
+	$prettyNameArr = explode("_",basename($files[$i], ".mp3"));
+	$prettyName="";
+	
+	for($j=0;$j<count($prettyNameArr);$j++){
+		if($j != count($prettyName)-1){
+			$prettyName .= " ";
+			$prettyName .= ucwords($prettyNameArr[$j]);
+		}
+		else $prettyName.= ucwords(basename($prettyNameArr[$j]));
+	}
+
+	echo "<input type='button' id='wilfork-1' class='sound-button' value='$prettyName' data='$files[$i]'/>";
+}
+?>
 <script>
 	window.addEventListener("load", start);
 
@@ -12,8 +29,7 @@
 
 	function playAudio(e){
 		console.log(e.target.getAttribute("data"));
-		let clip = new Audio("clips/" + e.target.getAttribute("data") + ".mp3");
+		let clip = new Audio("clips/" + e.target.getAttribute("data"));
 		clip.play();
 	}
 </script>
-<?php
