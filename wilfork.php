@@ -1,6 +1,6 @@
 <style>
 	.sound-button{
-		width: 18%;
+		width: 300px;
 		display: inline-block;
 		margin-bottom: 20px;
 		margin-left: 1%;
@@ -14,9 +14,13 @@
 		border-radius: 50% 50%;
 		cursor: pointer;
 		box-shadow: -5px 5px 5px #555;
+	}
 
+	#button-container{
+		text-align: center;
 	}
 </style>
+<div id="button-container">
 <?php
 $files = scandir("clips");
 
@@ -35,6 +39,7 @@ for($i=2; $i<count($files);$i++){
 	echo "<input type='button' id='wilfork-$i' class='sound-button' value='$prettyName' data='$files[$i]'/>";
 }
 ?>
+</div>
 <script>
 	window.addEventListener("load", start);
 
