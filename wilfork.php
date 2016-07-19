@@ -1,3 +1,22 @@
+<style>
+	.sound-button{
+		width: 18%;
+		display: inline-block;
+		margin-bottom: 20px;
+		margin-left: 1%;
+		margin-right: 1%;
+		height: 300px;
+		color: #FFF;
+		font-size: 24px;
+		font-weight: bold;
+		background-color: #33C3F0;
+		border: solid 2px #222;
+		border-radius: 50% 50%;
+		cursor: pointer;
+		box-shadow: -5px 5px 5px #555;
+
+	}
+</style>
 <?php
 $files = scandir("clips");
 
@@ -13,7 +32,7 @@ for($i=2; $i<count($files);$i++){
 		else $prettyName.= ucwords(basename($prettyNameArr[$j]));
 	}
 
-	echo "<input type='button' id='wilfork-1' class='sound-button' value='$prettyName' data='$files[$i]'/>";
+	echo "<input type='button' id='wilfork-$i' class='sound-button' value='$prettyName' data='$files[$i]'/>";
 }
 ?>
 <script>
