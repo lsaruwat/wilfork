@@ -7,13 +7,14 @@
 		margin-right: 1%;
 		height: 300px;
 		color: #FFF;
-		font-size: 24px;
+		font-size: 30px;
 		font-weight: bold;
 		background-color: #33C3F0;
 		border: solid 2px #222;
 		border-radius: 50% 50%;
 		cursor: pointer;
 		box-shadow: -5px 5px 5px #555;
+		outline: none;
 	}
 
 	#button-container{
